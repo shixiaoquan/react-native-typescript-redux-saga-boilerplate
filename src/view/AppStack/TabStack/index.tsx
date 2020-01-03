@@ -1,6 +1,4 @@
-import {
-  createBottomTabNavigator
-} from 'react-navigation-tabs';
+import {createBottomTabNavigator} from 'react-navigation-tabs';
 
 import * as routes from 'constants/route';
 import HomeStack from './HomeStack';

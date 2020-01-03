@@ -1,10 +1,11 @@
 import * as React from 'react';
-import { Image } from 'react-native';
 import {
   createStackNavigator,
   NavigationStackConfig,
   NavigationStackScreenProps,
 } from 'react-navigation-stack';
+import styled from 'styled-components/native';
+
 import * as routes from 'constants/route';
 import Me from './Me';
 
@@ -16,22 +17,23 @@ const routeConfig = {
 };
 
 const navigatorConfig: NavigationStackConfig = {
-  mode: 'card',
+  mode: 'card'
   headerMode: 'none',
 };
 
 const MeStack = createStackNavigator(routeConfig, navigatorConfig);
 
-const tabBarIcon = ({ focused }: { focused: Boolean }) => (
-  <Image
-    source={focused ? activeIcon : inactiveIcon}
-    style={{ height: 22, width: 28 }}
-    resizeMode="contain"
-  />
+const Icon = styled.Image`
+  width: 28;
+  height: 22;
+`;
+
+const tabBarIcon = ({focused}: {focused: Boolean}) => (
+  <Icon source={focused ? activeIcon : inactiveIcon} resizeMode="contain" />
 );
 
-MeStack.navigationOptions = ({ navigation }: NavigationStackScreenProps) => {
-  const { index } = navigation.state;
+MeStack.navigationOptions = ({navigation}: NavigationStackScreenProps) => {
+  const {index} = navigation.state;
   return {
     tabBarVisible: index === 0,
     tabBarLabel: '我的',
