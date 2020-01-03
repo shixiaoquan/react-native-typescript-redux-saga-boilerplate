@@ -17,7 +17,7 @@ const routeConfig = {
 };
 
 const navigatorConfig: NavigationStackConfig = {
-  mode: 'card'
+  mode: 'card',
   headerMode: 'none',
 };
 
